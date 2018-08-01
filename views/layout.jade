@@ -1,0 +1,83 @@
+doctype html
+html(lang='en')
+  head
+    title Login V9
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    
+    link(rel='icon', type='image/png', href='images/icons/favicon.ico')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/bootstrap/css/bootstrap.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='fonts/iconic/css/material-design-iconic-font.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/animate/animate.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/css-hamburgers/hamburgers.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/animsition/css/animsition.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/select2/select2.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/daterangepicker/daterangepicker.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='stylesheets/util.css')
+    link(rel='stylesheet', type='text/css', href='stylesheets/main.css')
+    // ===============================================================================================
+    link(rel='icon', type='image/png', href='images/icons/favicon.ico')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css'  , href='/stylesheets/bootstrap.min.css')
+ 
+ 
+ 
+
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+      a.navbar-brand(href='#') Navbar
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          if user
+            li.nav-item(class=(title == '/' ? 'active':''))
+               a.nav-link(href='/') Members
+          if !user
+            li.nav-item(class=(title == 'login' ? 'active':''))
+              a.nav-link(href='/users/login')
+                | Login
+                span.sr-only (current)
+            li.nav-item(class=(title == 'register' ? 'active':''))
+              a.nav-link(href='/users/register') Register
+          
+          form.form-inline.my-2.my-lg-0
+            input.form-control.mr-sm-2.pull-right(type='text', placeholder='Search', aria-label='Search')
+            button.btn.btn-outline-success.my-2.my-sm-0.pull-right(type='submit') Search
+          if user          
+            button.btn.btn-md.btn-danger.pull-right(type= 'button', name='logout' )
+              a(href='/users/logout')
+               | Logout 
+    .container  
+      div.report 
+        != messages()
+
+
+    block content
+        // ===============================================================================================
+    script(src='vendor/jquery/jquery-3.2.1.min.js')
+    // ===============================================================================================
+    script(src='vendor/animsition/js/animsition.min.js')
+    // ===============================================================================================
+    script(src='vendor/bootstrap/js/popper.js')
+    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    // ===============================================================================================
+    script(src='vendor/select2/select2.min.js')
+    // ===============================================================================================
+    script(src='vendor/daterangepicker/moment.min.js')
+    script(src='vendor/daterangepicker/daterangepicker.js')
+    // ===============================================================================================
+    script(src='vendor/countdowntime/countdowntime.js')
+    // ===============================================================================================
+    script(src='javascripts/main.js')
+    
